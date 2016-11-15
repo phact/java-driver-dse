@@ -127,6 +127,13 @@
             <artifactId>api-ldap-codec-standalone</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-mapping</artifactId>
+            <scope>test</scope>
+            <version>${java-driver.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
