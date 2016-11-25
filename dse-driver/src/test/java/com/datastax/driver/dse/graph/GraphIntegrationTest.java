@@ -37,6 +37,13 @@ public class GraphIntegrationTest extends CCMGraphTestsSupport {
         executeGraph(GraphFixtures.modern);
     }
 
+    //JAVA-1341 - the driver NPE's when dse graph returns a null response
+    @Test(groups = "short")
+    public void handleQueriesThatReuturnNull() throws Exception {
+        GraphResultSet result = session().executeGraph("g.V('not here')");
+        assertThat(result).isNotNull();
+    }
+
     /**
      * Ensures that a {@link Vertex} id can be given as a parameter.  This facilitates the convenience of being able to
      * reference a specific vertex as part of a traversal, i.e.:
